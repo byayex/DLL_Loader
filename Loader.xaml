@@ -1,0 +1,116 @@
+﻿<Window x:Class="DLL_Loader.Loader"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DLL_Loader"
+        mc:Ignorable="d"
+        Title="Loader" 
+        Height="450" 
+        Width="450"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#333333">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Background="Transparent"
+                HorizontalAlignment="Right"
+                BorderThickness="0"
+                Content="Close"
+                Foreground="CornflowerBlue"
+                FontFamily="Arial Black"
+                FontSize="25"
+                Margin="1"
+                Click="ButtonClose">
+        </Button>
+        <Label Content="Please enter your 16 digit license key:"
+                   Foreground="#679DFF"
+                   FontSize="15"
+                   VerticalAlignment="Bottom"
+                   FontFamily="Arial Black"
+                   Margin="10,0,0,0"
+                   Grid.Row="1"/>
+        <StackPanel Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txt_license"
+                     MaxWidth="350"
+                     Background="#333333"
+                     BorderThickness="2"
+                     Foreground="CornflowerBlue"
+                     FontFamily="Arial Black"
+                     FontSize="15"
+                     TextAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     MaxLines="1"
+                     MaxLength="16"
+                     Margin="10,0,0,0"
+                     Height="30"
+                     Width="350"/>
+                <Button Background="Transparent"
+                        x:Name="redeem1bt"
+                HorizontalAlignment="Center"
+                BorderThickness="2"
+                Content="Redeem"
+                Foreground="CornflowerBlue"
+                FontFamily="Arial Black"
+                FontSize="15"
+                Margin="15,0,0,0"
+                Click="Redeem"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" VerticalAlignment="Center">
+            <Label Content="Time left: " 
+                   Foreground="CornflowerBlue"
+                   Margin="70,0,0,0"
+                   FontSize="15"
+                   FontFamily="Arial Black"
+                   HorizontalAlignment="Center"/>
+            <TextBlock x:Name="time_left"
+                       Text="0 Days"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="15"
+                       FontFamily="Arial Black"
+                       Foreground="Red"/>
+        </StackPanel>
+        <Border Grid.Row="4" BorderBrush="White" BorderThickness="1" />
+        <StackPanel Grid.Row="4" Visibility="Hidden" x:Name="loaderstackpanel">
+            <Label Content="Please select the GTA process:" Foreground="CornflowerBlue" 
+                   FontSize="15"
+                   FontFamily="Arial Black"
+                   HorizontalAlignment="Center"/>
+            <ComboBox x:Name="processes" Foreground="CornflowerBlue"
+                      FontSize="15"
+                      FontFamily="Arial Black"
+                      Background="Transparent"
+                      Margin="10">
+            </ComboBox>
+            <Button Background="Transparent"
+                HorizontalAlignment="Center"
+                BorderThickness="2"
+                Content="  Start the injection process  "
+                Foreground="CornflowerBlue"
+                FontFamily="Arial Black"
+                FontSize="15"
+                Margin="0,20,0,0"
+                Click="Inject"/>
+            <Label Foreground="CornflowerBlue" 
+                   FontSize="15"
+                   FontFamily="Arial Black"
+                   HorizontalAlignment="Center"
+                   Margin="0,30,0,0">
+                <TextBlock>After pressing the button
+                    <LineBreak/>
+                    wait until this window closes itself<LineBreak/><LineBreak/>
+                If you cannot find GTA restart this software</TextBlock>
+            </Label>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,85 @@
+﻿<Window x:Class="DLL_Loader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DLL_Loader"
+        mc:Ignorable="d"
+        Title="LoginWindow" 
+        Height="450" 
+        Width="450"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#333333">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Background="Transparent"
+                HorizontalAlignment="Right"
+                BorderThickness="0"
+                Content="Close"
+                Foreground="CornflowerBlue"
+                FontFamily="Arial Black"
+                FontSize="25"
+                Margin="1"
+                Click="ButtonClose">
+        </Button>
+        <StackPanel Grid.Row="1">
+            <Label Content="Please log in"
+               Grid.Row="1"
+               Foreground="CornflowerBlue"
+               FontSize="30"
+               Margin="15"
+               FontFamily="Arial Black"
+               HorizontalAlignment="Center">
+                <Label.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="10" Opacity=".5" Softness="9" />
+                </Label.BitmapEffect>
+            </Label>
+            <Label Content="Username:"
+                   Foreground="#679DFF"
+                   FontSize="20"
+                   Margin="15"
+                   FontFamily="Arial Black"
+                   HorizontalAlignment="Center"/>
+            <TextBox x:Name="txt_username"
+                     MaxWidth="350"
+                     Background="#333333"
+                     BorderThickness="2"
+                     Foreground="CornflowerBlue"
+                     FontFamily="Arial Black"
+                     FontSize="25"
+                     MaxLines="1"
+                     MaxLength="40"
+                     Height="30"/>
+            <Label Content="Password:"
+                   Foreground="#679DFF"
+                   FontSize="20"
+                   Margin="15"
+                   FontFamily="Arial Black"
+                   HorizontalAlignment="Center"/>
+            <PasswordBox  
+                    x:Name="txt_password"
+                     MaxWidth="350"
+                     Background="#333333"
+                     BorderThickness="2"
+                     Foreground="CornflowerBlue"
+                     FontFamily="Arial Black"
+                     FontSize="25"
+                     MaxLength="30"    
+                     Height="30"/>
+            <Button
+                Background="Transparent"
+                HorizontalAlignment="Center"
+                BorderThickness="2"
+                Content="Login"
+                Foreground="CornflowerBlue"
+                FontFamily="Arial Black"
+                FontSize="30"
+                Margin="30"
+                Click="Login"/>
+        </StackPanel>
+    </Grid>
+</Window>
